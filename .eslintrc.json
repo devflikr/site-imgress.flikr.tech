@@ -1,0 +1,104 @@
+{
+    "env": {
+        "node": true,
+        "browser": true
+    },
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-hooks/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "no-alert": "error",
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error"
+        ],
+        "camelcase": "error",
+        // "comma-dangle": "error",
+        "id-length": [
+            "error",
+            {
+                "min": 1,
+                "max": 64
+            }
+        ],
+        // "indent": [
+        //     "error",
+        //     4
+        // ],
+        "jsx-quotes": [
+            "error",
+            "prefer-double"
+        ],
+        "max-lines": [
+            "error",
+            1000
+        ],
+        "no-duplicate-imports": "error",
+        "prefer-arrow-callback": "error",
+        "prefer-template": "warn",
+        "prefer-destructuring": "error",
+        "lines-around-comment": [
+            "error",
+            {
+                "beforeLineComment": true,
+                "beforeBlockComment": true,
+                "allowBlockStart": true,
+                "allowClassStart": true,
+                "allowObjectStart": true,
+                "allowArrayStart": true
+            }
+        ],
+        // add new line above return
+        "newline-before-return": "error",
+        // add new line below import
+        "import/newline-after-import": [
+            "error",
+            {
+                "count": 1
+            }
+        ],
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "extendDefaults": true,
+                "types": {
+                    "{}": false
+                }
+            }
+        ]
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "import",
+        "react-refresh"
+    ],
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": [
+                    "./tsconfig.json"
+                ]
+            }
+        }
+    }
+}
